@@ -10,7 +10,7 @@ def recieve(conn):
         data=conn.recv(1024)
         if not data:
             break
-        print(data)
+        print(str(data,encoding="utf-8")+"\n")
 
 
 
@@ -24,6 +24,8 @@ def main():
     ID=input("請輸入ID：")
     s.send(str.encode("ID_register"))
     s.send(str.encode(ID))
-
+    while True:
+        message=input("請輸入訊息:\n")
+        s.send(str.encode(message))
 if __name__=="__main__":
     main()
