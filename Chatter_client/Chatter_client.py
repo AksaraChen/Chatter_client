@@ -10,7 +10,7 @@ def recieve(conn):
         data=conn.recv(1024)
         if not data:
             break
-        print(str(data,encoding="utf-8")+"\n")
+        print(str(data,encoding="utf-8"))
 
 
 
